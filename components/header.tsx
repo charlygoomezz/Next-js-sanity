@@ -15,7 +15,7 @@ type HeaderProps = {
   signupText: string
 }
 
-export const HeroHeader = ({ logo, menuItems = [], loginText = 'Login', signupText = 'Sign Up' }: HeaderProps) => {
+export const Header = ({ logo, menuItems = [], loginText = 'Login', signupText = 'Sign Up' }: HeaderProps) => {
   const [menuState, setMenuState] = React.useState(false)
   const locale = useLocale()
 

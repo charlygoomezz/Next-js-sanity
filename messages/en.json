@@ -1,0 +1,15 @@
+{
+    "Login": {
+      "title": "Sign In to Tailark",
+      "subtitle": "Welcome back! Sign in to continue",
+      "email": "Username",
+      "password": "Password",
+      "forgot": "Forgot your password?",
+      "button": "Sign In",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create account",
+      "continueWith": "Or continue with",
+      "google": "Google",
+      "microsoft": "Microsoft"
+    }
+  }

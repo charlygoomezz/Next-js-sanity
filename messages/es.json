@@ -1,0 +1,15 @@
+{
+    "Login": {
+      "title": "Inicia sesión en Tailark",
+      "subtitle": "¡Bienvenido de nuevo! Inicia sesión para continuar",
+      "email": "Usuario",
+      "password": "Contraseña",
+      "forgot": "¿Olvidaste tu contraseña?",
+      "button": "Iniciar sesión",
+      "noAccount": "¿No tienes una cuenta?",
+      "createAccount": "Crear cuenta",
+      "continueWith": "O continúa con",
+      "google": "Google",
+      "microsoft": "Microsoft"
+    }
+  }

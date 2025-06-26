@@ -1,6 +1,6 @@
 'use client'
-import { InfiniteSlider } from "./ui/infinite-slider"
-import { ProgressiveBlur } from "./ui/progressive-blur"
+import { InfiniteSlider } from "../ui/infinite-slider"
+import { ProgressiveBlur } from "../ui/progressive-blur"
 
 export type Brand = {
   logoUrl: string

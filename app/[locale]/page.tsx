@@ -1,7 +1,7 @@
 import HeroSection from '@/components/hero-section'
-import Features from '@/components/features-1'
+import Features from '@/components/homePage/features-1'
 import FooterSection from '@/components/footer'
-import StatsSection from '@/components/stats'
+import StatsSection from '@/components/homePage/stats'
 import { getStatsSection } from '@/sanity/lib/fetchers'
 import { getHeroSection } from '@/sanity/lib/fetchers'
 import { getHeaderSection } from '@/sanity/lib/fetchers'
@@ -66,4 +66,4 @@ export default async function Home({ params }: Props) {
       <FooterSection />
     </>
   )
-}
+} 

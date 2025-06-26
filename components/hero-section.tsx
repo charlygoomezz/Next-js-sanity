@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { BrandCarousel, Brand } from '@/components/brand-carousel'
+import { BrandCarousel, Brand } from '@/components/homePage/brand-carousel'
 
 type HeroSectionProps = {
   title: string

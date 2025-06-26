@@ -50,3 +50,9 @@ export const featuresSectionQuery = (locale: string) => `
     }
   }
 `
+export const aboutHeroSectionQuery = (locale: string) => `
+  *[_type == "aboutHeroSection"][0]{
+    "title": title.${locale},
+    "description": description.${locale}
+  }
+`

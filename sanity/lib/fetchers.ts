@@ -4,6 +4,7 @@ import { heroSectionQuery } from './queries'
 import { headerSectionQuery } from './queries'
 import { brandCarouselQuery } from './queries'
 import { featuresSectionQuery } from './queries'
+import { aboutHeroSectionQuery } from './queries'
 
 export async function getStatsSection(locale: string) {
   return await client.fetch(statsSectionQuery(locale), { locale })
@@ -19,4 +20,7 @@ export async function getBrandCarousel(locale: string) {
 }
 export async function getFeaturesSection(locale: string) {
   return await client.fetch(featuresSectionQuery(locale), { locale })
-} 
+}
+export async function getAboutHeroSection(locale: string) {
+  return await client.fetch(aboutHeroSectionQuery(locale), { locale })
+}

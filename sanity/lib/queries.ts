@@ -56,3 +56,12 @@ export const aboutHeroSectionQuery = (locale: string) => `
     "description": description.${locale}
   }
 `
+export const aboutStorySectionQuery = (locale: string) => `
+  *[_type == "aboutStory"][0]{
+    "badge": badge.${locale},
+    "title": title.${locale},
+    "description": description.${locale},   
+    "image": image.asset->url,
+    "alt": alt.${locale}
+  }
+`

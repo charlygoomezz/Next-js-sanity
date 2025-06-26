@@ -1,37 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Multilanguage Landing Page with Next.js, Sanity & next-intl
 
-## Getting Started
+This project is a modern, multilingual landing page built with [Next.js](https://nextjs.org/), [Sanity](https://www.sanity.io/) as a headless CMS, and [next-intl](https://next-intl-docs.vercel.app/) for internationalization. It features light/dark themes, reusable components, and support for multiple languages (English and Spanish).
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Internationalization**: Multi-language support using `next-intl`.
+- **Content Management**: Integrated with Sanity for editing texts, images, and sections from an admin panel.
+- **Light/Dark Theme**: Easily switch between visual themes.
+- **Reusable Components**: Sections like Hero, Features, Stats, Brand Carousel, Footer, and more.
+- **Protected Routes & Middleware**: Redirects and route handling based on language, with internal route exclusions.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Requirements
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Node.js 18+
+- A [Sanity.io](https://www.sanity.io/) account and project
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Installation
 
-## Learn More
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-user/your-repo.git
+   cd your-repo
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Create a `.env.local` file with your Sanity credentials:
+   ```
+   NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+   NEXT_PUBLIC_SANITY_DATASET=production
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-## Deploy on Vercel
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Useful Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Next-js-sanity
+- `dev`: Start the development server.
+- `build`: Build the app for production.
+- `start`: Start the app in production mode.
+- `lint`: Run the linter.
+
+## Main Structure
+
+- `/app`: Next.js pages and layouts.
+- `/components`: Reusable UI components.
+- `/sanity`: Sanity configuration and schemas.
+- `/i18n`: Internationalization configuration.
+- `/public`: Static images and assets.
+
+## Customization
+
+- **Languages**: Edit `i18n/routing.ts` to add or remove languages.
+- **Content**: Manage content from the Sanity admin panel.
+- **Styles**: Customize styles in `globals.css` and component files.
+
+## Deployment
+
+You can easily deploy on [Vercel](https://vercel.com/) or any platform compatible with Next.js.
+
+---

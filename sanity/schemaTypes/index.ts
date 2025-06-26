@@ -5,7 +5,8 @@ import { localeString } from './localeString'
 import { localeText } from './localeText'
 import { headerSection } from './headerSection'
 import { brandCarousel } from './brandCarousel'
+import { featuresSection } from './featuresSection'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [headerSection,heroSection,brandCarousel,statsSection, localeString, localeText],
+  types: [headerSection,heroSection,brandCarousel,statsSection,featuresSection, localeString, localeText],
 }

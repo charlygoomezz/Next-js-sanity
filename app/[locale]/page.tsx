@@ -7,6 +7,7 @@ import { getHeroSection } from '@/sanity/lib/fetchers'
 import { getHeaderSection } from '@/sanity/lib/fetchers'
 import { HeroHeader } from '@/components/header'
 import { getBrandCarousel } from '@/sanity/lib/fetchers'
+import { getFeaturesSection } from '@/sanity/lib/fetchers'
 
 type Props = {
   params: {
@@ -18,11 +19,12 @@ type MenuItem = { label: string; href: string }
 
 export default async function Home({ params }: Props) {
   const locale = params.locale
-  const [statsData, heroData, headerData,brandCarouselData] = await Promise.all([
+  const [statsData, heroData, headerData,brandCarouselData,featuresData] = await Promise.all([
     getStatsSection(locale),
     getHeroSection(locale),
     getHeaderSection(locale),
-    getBrandCarousel(locale)
+    getBrandCarousel(locale),
+    getFeaturesSection(locale),
 
   ])
   if (!statsData || !heroData) {
@@ -51,7 +53,11 @@ export default async function Home({ params }: Props) {
     brandCarousel={brandCarouselData} 
    
   />
-      <Features />
+      <Features
+        title={featuresData.title}
+        description={featuresData.description}
+        features={featuresData.features}
+      />
       <StatsSection
         title={statsData.title}
         description={statsData.description}

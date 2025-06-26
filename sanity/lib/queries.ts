@@ -39,3 +39,14 @@ export const headerSectionQuery = (locale: string) => `
     }
   }
 `
+export const featuresSectionQuery = (locale: string) => `
+  *[_type == "featuresSection"][0]{
+    "title": title.${locale},
+    "description": description.${locale},
+    features[]{
+      "iconUrl": iconImage.asset->url,
+      "title": title.${locale},
+      "description": description.${locale}
+    }
+  }
+`

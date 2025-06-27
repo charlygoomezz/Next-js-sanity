@@ -1,6 +1,6 @@
 {
     "Login": {
-      "title": "Inicia sesión en Tailark",
+      "title": "Inicia sesión en Kleo",
       "subtitle": "¡Bienvenido de nuevo! Inicia sesión para continuar",
       "email": "Usuario",
       "password": "Contraseña",
@@ -19,5 +19,13 @@
       "contact": "Contacto",
       "login": "Iniciar sesión",
       "signup": "Registrarse"
+    },
+   "Footer": {
+    "features": "Características",
+    "solution": "Solución",
+    "customers": "Clientes",
+    "pricing": "Precios",
+    "help": "Ayuda",
+    "about": "Acerca de"
     }
   }

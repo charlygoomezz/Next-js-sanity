@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import React from 'react'
 import { ModeToggle } from './mode-toggle'
 import { LanguageSwitcher } from './language-switcher'
+import { LogoStroke } from '@/components/logo'
 
 type MenuItem = {
   labelKey: string
@@ -20,11 +21,8 @@ const staticMenuItems: MenuItem[] = [
   { labelKey: 'contact', href: '/contact' },
 ]
 
-type HeaderProps = {
-  logo?: string
-}
 
-export const Header = ({ logo }: HeaderProps) => {
+export const Header = () => {
   const [menuState, setMenuState] = React.useState(false)
   const locale = useLocale()
   const t = useTranslations('Header')
@@ -44,11 +42,8 @@ export const Header = ({ logo }: HeaderProps) => {
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
               <Link href="/" aria-label="home" className="flex items-center space-x-2">
-                {logo ? (
-                  <img src={logo} alt="Logo" className="h-8 w-auto" />
-                ) : (
-                  <span className="font-bold text-lg">LOGO</span>
-                )}
+
+                  <LogoStroke className="h-8 w-auto" />
               </Link>
 
               <button
@@ -99,7 +94,7 @@ export const Header = ({ logo }: HeaderProps) => {
                   </Link>
                 </Button>
                 <Button asChild size="sm">
-                  <Link href={`/${locale}/signup`}>
+                  <Link href={`/${locale}/sign-up`}>
                     <span>{t('signup')}</span>
                   </Link>
                 </Button>

@@ -56,3 +56,14 @@ export const aboutStorySectionQuery = (locale: string) => `
     "alt": alt.${locale}
   }
 `
+export const aboutMantraSectionQuery = (locale: string) => `
+  *[_type == "aboutMantra"][0]{
+    "badge": badge.${locale},
+    "title": title.${locale},
+    items[]{
+      "iconUrl": iconImage.asset->url,
+      "title": title.${locale},
+      "description": description.${locale}
+    }
+  }
+`

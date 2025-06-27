@@ -5,6 +5,8 @@ import AboutTeam from "@/components/aboutPage/AboutTeam"
 import AboutFinancing from "@/components/aboutPage/AboutFinancing"
 import { getAboutHeroSection } from "@/sanity/lib/fetchers"
 import { getAboutStorySection } from "@/sanity/lib/fetchers"
+import { getAboutMantraSection } from "@/sanity/lib/fetchers"
+
 
 
 type Props = {
@@ -15,9 +17,10 @@ type Props = {
 
 export default async function AboutPage({ params }: Props) {
   const locale = params.locale
-  const [aboutHeroData, aboutStoryData] = await Promise.all([
+  const [aboutHeroData, aboutStoryData,aboutMantraData] = await Promise.all([
     getAboutHeroSection(locale),
     getAboutStorySection(locale),
+    getAboutMantraSection(locale)
   ])
   
   return (
@@ -30,7 +33,7 @@ export default async function AboutPage({ params }: Props) {
         image={aboutStoryData?.image}
         alt={aboutStoryData?.alt}
       />
-      <AboutMantra />
+      <AboutMantra badge={aboutMantraData.badge} title={aboutMantraData.title} items={aboutMantraData?.items || []} />
       <AboutTeam />
       <AboutFinancing />
     </div>

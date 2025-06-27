@@ -1,6 +1,6 @@
 'use client'
 
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -8,16 +8,31 @@ import React from 'react'
 import { ModeToggle } from './mode-toggle'
 import { LanguageSwitcher } from './language-switcher'
 
-type HeaderProps = {
-  logo: string
-  menuItems: { name: string; href: string }[]
-  loginText: string
-  signupText: string
+type MenuItem = {
+  labelKey: string
+  href: string
 }
 
-export const Header = ({ logo, menuItems = [], loginText = 'Login', signupText = 'Sign Up' }: HeaderProps) => {
+const staticMenuItems: MenuItem[] = [
+  { labelKey: 'home', href: '/' },
+  { labelKey: 'about', href: '/about' },
+  { labelKey: 'pricing', href: '/pricing' },
+  { labelKey: 'contact', href: '/contact' },
+]
+
+type HeaderProps = {
+  logo?: string
+}
+
+export const Header = ({ logo }: HeaderProps) => {
   const [menuState, setMenuState] = React.useState(false)
   const locale = useLocale()
+  const t = useTranslations('Header')
+
+  const menuItems = staticMenuItems.map((item) => ({
+    label: t(item.labelKey),
+    href: item.href,
+  }))
 
   return (
     <header>
@@ -53,7 +68,7 @@ export const Header = ({ logo, menuItems = [], loginText = 'Login', signupText =
                         href={item.href}
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
                       >
-                        <span>{item.name}</span>
+                        <span>{item.label}</span>
                       </Link>
                     </li>
                   ))}
@@ -70,21 +85,22 @@ export const Header = ({ logo, menuItems = [], loginText = 'Login', signupText =
                         href={item.href}
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
                       >
-                        <span>{item.name}</span>
+                        <span>{item.label}</span>
                       </Link>
                     </li>
                   ))}
                 </ul>
               </div>
+
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Button asChild variant="outline" size="sm">
                   <Link href={`/${locale}/login`}>
-                    <span>{loginText}</span>
+                    <span>{t('login')}</span>
                   </Link>
                 </Button>
                 <Button asChild size="sm">
                   <Link href={`/${locale}/signup`}>
-                    <span>{signupText}</span>
+                    <span>{t('signup')}</span>
                   </Link>
                 </Button>
                 <ModeToggle />

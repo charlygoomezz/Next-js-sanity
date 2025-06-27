@@ -18,16 +18,7 @@ export const heroSectionQuery = (locale: string) => `
     "buttonSecondaryLink": ctaSecondaryLink
   }
 `
-export const headerSectionQuery = (locale: string) => `
-  *[_type == "headerSection"][0]{
-    "logo": logo.asset->url,
-    menuItems[]{
-      "label": label.${locale},
-      href
-    },
-    "loginText": loginText.${locale},
-    "signupText": signupText.${locale}
-  }`
+
   export const brandCarouselQuery = (locale: string) => `
   *[_type == "brandCarousel"][0]{
     "introText": introText.${locale},

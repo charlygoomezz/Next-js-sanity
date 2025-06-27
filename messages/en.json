@@ -11,5 +11,13 @@
       "continueWith": "Or continue with",
       "google": "Google",
       "microsoft": "Microsoft"
+    },
+    "Header":{
+      "home": "Home",
+      "about": "About us",
+      "pricing": "Price",
+      "contact": "Contact",
+      "login": "Log in",
+      "signup": "Sign up" 
     }
   }
